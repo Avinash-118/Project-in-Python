@@ -1,0 +1,23 @@
+import time
+
+def main():
+    # User sets the alarm time
+    alarm_time = input("Enter the time for the alarm (HH:MM:SS AM/PM): ")
+
+    # Confirming the alarm time
+    print(f"Setting up alarm for {alarm_time}...")
+
+    while True:
+        # Get current time from the system
+        current_time = time.strftime("%I:%M:%S %p", time.localtime())
+
+        # Check if the current time matches the alarm time
+        if current_time == alarm_time:
+            print("Wake Up! The time is", current_time)
+            break  # Exit the loop and end the program
+
+        # Sleep for a while to avoid excessive CPU usage
+        time.sleep(1)
+
+if __name__ == "__main__":
+    main()
